@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Writing a bad facebook bot for fun (and loss)
+title: Writing a bad Facebook bot
 date: 2021-01-06 12:00:00
 description: Using python to write a bad Facebook chatbot that imitates a better IRC chatbot # Add post description (optional)
 img: buckets.jpg # Add image post (optional)
@@ -8,7 +8,7 @@ fig-caption: A row of Buckets # Add figcaption (optional)
 tags: [python, xkcd, bucket, bot, facebook, messenger]
 ---
 
-I used to spend some time on IRC. Not a lot of time. I think I posted once before I got scared of people talking back at me and left. But I lurked. And I lurked on the #XKCD channel. Initially to catch a brief glimpse of the man himself. But soon I fell in love. I fell in love with a Bucket. Bucket was a bot on the #XKCD channel that you could teach factoids to. Simple statements in the chat like `Apple is Green` would be picked up on by bucket and the next time someone said apple bucket would reply. 
+I used to spend some time on IRC. Not a lot of time. I think I posted once before I got scared of people talking back at me and left. But I lurked. And I lurked on the #XKCD channel. Initially to catch a brief glimpse of the man himself. But soon I fell in love. I fell in love with a Bucket. Bucket was a bot on the #XKCD channel that you could teach factoids to. Simple statements in the chat like "Apple is Green" would be picked up on by bucket and the next time someone said apple bucket would reply. 
 
 #XKCD was a big channel. So there were lots of people interacting with Bucket. Eventually, bucket learned so many factoids that for all intents and purposes, it was just another user in the chat. 
 
@@ -118,5 +118,3 @@ Success! Bucket now replies to a message that we taught him how to reply to. Now
 UPDATE:
 
 Bucket is now more popular than me.
-
-![Bonus XKCDB quote featuring bucket](../assets/img/facebucket/bucket2.png)
