@@ -66,7 +66,7 @@ def onMessage(self, author_id, message_object, thread_id, thread_type, **kwargs)
 * `thread_id` is the id of the conversation or group from which the message was received. 
 * `thread_type` distinguishes the type of messenger chat being interacted with as they have different API criteria. 
 
-Fortunately, I don't need to worry too much about these arguments, except for the `message_object`. All I need to do is build some functions to create responses for the three use cases, and some logic to determine when to call each function. 
+Fortunately, I don't need to worry too much about these arguments, except for the `message_object`. All I need to do is build some functions to create responses for the two use cases, and some logic to determine when to call each function. 
 
 ## IF Hi THEN Hi
 
@@ -83,7 +83,7 @@ add_to_responses(self, message_object, thread_id, thread_type):
 
     self.send(Message(text=msg), thread_id=thread_id, thread_type=thread_type)
 ```
-This function uses the `NEW_RESPONSE_PATTERN` to search for any message received. If it finds a match it adds that response to the `RESPONSES` dictionary and reply confirming the user's input.  
+This function uses the `NEW_RESPONSE_PATTERN` to search for any message received. If it finds a match it adds that response to the `RESPONSES` dictionary and then Bucket will reply, confirming the user's input.  
 
 ![A screenshot of the Facebook chat window, with Bucket, successfully reading and processing the message.](../assets/img/facebucket/ifhithenhi.png)
  
@@ -107,14 +107,14 @@ def respond_to_message(self, message_object, thread_id, thread_type):
 ```
 Here Bucket will look through all the responses he has stored in his `RESPONSES` dictionary then if any part of the message matches the trigger pattern, Bucket will respond with the programmed message. 
 
-If there is more than one pattern that matches Bucket will pick one of the corresponding responses at random. 
+If there is more than one pattern that matches then Bucket will pick one of the corresponding responses at random. 
 
-I've also added the `reply_to_id` argument in the fbchat client's `send()` function. When passed the unique identifier from the message object, Bucket's response will appear as a direct reply to that message. Rather than just a robot shouting into the void. 
+I've also added the `reply_to_id` argument in the fbchat client's `send()` function. When passed the unique identifier from the `message_object`, Bucket's response will appear as a direct reply to that message. Rather than just a robot shouting into the void. 
 
 ![Bucket successfully responding to a message](../assets/img/facebucket/success.png)
 
-Success! Bucket now replies to a message that we taught him how to reply to. Now, in a role reversal 10 years in the making, time to stick him on an EC2 instance and leave him to lurk in all the group chat that I have access to.
+Success! Bucket now replies to a message that we taught him how to reply to. Now, in a role reversal 10 years in the making, time to stick him on an EC2 instance and leave him to lurk in all the group chats that I have access to.
 
-UPDATE:
+## UPDATE:
 
 Bucket is now more popular than me.
