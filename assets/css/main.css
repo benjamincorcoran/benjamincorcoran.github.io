@@ -142,7 +142,8 @@ kbd,
 samp {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 1em;
+  font-size: 10px;
+  line-height: 1;
   /* 2 */
 }
 
@@ -769,7 +770,7 @@ template {
 }
 
 html {
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 body {
@@ -809,7 +810,7 @@ blockquote {
 }
 
 pre {
-  padding: 1rem 2rem;
+  padding: 8px;
   overflow: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
